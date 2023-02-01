@@ -1,0 +1,33 @@
+:root {
+  --white: #FFFFFF;
+
+  --gray-200: #495057;
+  --gray-500: #212529;
+
+  --green-200: #DCE9E2;
+  --green-500: #00856F;
+
+}
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--green-500);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--green-200);
+  color: var(--gray-500);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+  font-family: 'DM sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}

@@ -6,6 +6,12 @@ import styles from './App.module.css'
 import { Search } from './components/Search'
 import { DeviceMobile, EnvelopeSimple, Heartbeat, MapPin } from 'phosphor-react'
 
+const data = [
+  { contato: "Dra. Jade", mensagem: "A mãe da Dra. ligou precisa falar com ela", telefone: "+55 11 9999-9999" },
+  { contato: "Julia Matos", mensagem: "Separar a nota fiscal, irá retirar dia 02 de fevereiro", telefone: "+55 11 4002-8922" },
+  { contato: "", mensagem: "depositar o dinheiro na conta do Dr.", telefone: ""},
+]
+
 export default function App() {
 
   function DoctorAttending (props){
@@ -26,6 +32,8 @@ export default function App() {
       </div>
     );
   }
+
+
 
   return (
     <div className={styles.container}>
@@ -83,6 +91,31 @@ export default function App() {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className={styles.containerAviso}>
+              <p>Aviso</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Contato</th>
+                    <th>Mensagem</th>
+                    <th>Telefone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.map((item, key) => {
+                    return (
+                      <tr key={key}>
+                        <td><input type="checkbox" /></td>
+                        <td>{item.contato}</td>
+                        <td>{item.mensagem}</td>
+                        <td>{item.telefone}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
             </div>
           </section>
           <section className={styles.main2}>CALENDARIO</section>

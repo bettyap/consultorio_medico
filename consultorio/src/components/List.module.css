@@ -1,0 +1,19 @@
+.contentDoctorList {
+  width: 100%;
+  height: 5rem;
+  background: var(--white);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.contentDoctorList + .contentDoctorList{
+  margin-top: 1rem;
+}
+
+.listInfo {
+  display: flex;
+  flex-direction: column;
+}

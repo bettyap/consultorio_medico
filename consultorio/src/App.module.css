@@ -21,6 +21,7 @@
 
 .main2 {
   flex: 1;
+  padding: 2rem
 }
 
 .containerDashboard {
@@ -99,4 +100,21 @@ th {
   
 td {
   text-align: center;
+}
+
+.calendarContainer {
+  width: 100%;
+  display: flex;
+}
+
+.calendarContainer + .calendarContainer{
+  padding-top: 2rem;
+}
+
+.contentDoctor{
+  width: 100%;
+  height: 26.8rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }

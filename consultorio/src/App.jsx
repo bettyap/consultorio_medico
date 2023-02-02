@@ -1,10 +1,13 @@
+import 'react-calendar/dist/Calendar.css';
+import './global.css'
+import styles from './App.module.css'
 import React from 'react'
 import { Header } from './components/Header'
 import { Siderbar } from './components/Sidebar'
-import './global.css'
-import styles from './App.module.css'
 import { Search } from './components/Search'
 import { DeviceMobile, EnvelopeSimple, Heartbeat, MapPin } from 'phosphor-react'
+import { CalendarSimple } from './components/Calendar'
+import { List } from './components/List'
 
 const data = [
   { contato: "Dra. Jade", mensagem: "A mãe da Dra. ligou precisa falar com ela", telefone: "+55 11 9999-9999" },
@@ -118,7 +121,43 @@ export default function App() {
               </table>
             </div>
           </section>
-          <section className={styles.main2}>CALENDARIO</section>
+          <section className={styles.main2}>
+            <div className={styles.calendarContainer}>
+              <CalendarSimple />
+            </div>
+            <div className={styles.calendarContainer}>
+              <div className={styles.contentDoctor}>
+                <List 
+                  name="Dra. Betty"
+                  speciality="Pediatra"
+                />
+                <List 
+                  name="Dra. Jade"
+                  speciality="Pediatra"
+                />
+                <List 
+                  name="Dra. Jenni"
+                  speciality="Pediatra"
+                />
+                <List 
+                  name="Dra. Fabiana"
+                  speciality="Pediatra"
+                />
+                <List 
+                  name="Dra. Fabiana"
+                  speciality="Pediatra"
+                />
+                <List 
+                  name="Dra. Fabiana"
+                  speciality="Pediatra"
+                />
+                <List 
+                  name="Dra. Fabiana"
+                  speciality="Pediatra"
+                />
+              </div>
+            </div>
+          </section>
         </main> 
       </div>
     </div>

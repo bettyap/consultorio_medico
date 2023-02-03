@@ -12,7 +12,7 @@ export function Search(){
         placeholder="Buscar"
       />
       <button className={styles.searchBtn}>
-        <MagnifyingGlass size={32} color="var(--green-500)" /> 
+        <MagnifyingGlass size={28} color="var(--green-500)" /> 
       </button>
     </div>
   );

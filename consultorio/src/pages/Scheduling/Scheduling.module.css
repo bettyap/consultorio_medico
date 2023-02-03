@@ -1,0 +1,50 @@
+.container{
+  width: 100%;
+}
+
+.content{
+  display: flex;
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main1 {
+  flex: 1;
+  padding: 2rem;
+}
+
+.calendarContainer {
+  width: 100%;
+  display: flex;
+}
+
+.calendarContainer + .calendarContainer{
+  padding-top: 2rem;
+}
+
+.contentDoctor{
+  width: 100%;
+  height: 26.8rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.main2 {
+  flex: 2;
+  background: white;
+  padding: 3rem
+}
+
+.contentScheduling {
+  width: 100%;
+  height: 42.79rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}

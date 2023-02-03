@@ -2,6 +2,7 @@ import { useState } from "react";
 import * as Tooltip from '@radix-ui/react-tooltip';
 import { Calendar, CaretDoubleLeft, CaretDoubleRight, FolderUser, House } from "phosphor-react";
 import styles from "./Sidebar.module.css";
+import { Link } from "react-router-dom";
 
 export function Siderbar(){
   const [menuOpen, setMenuOpen] = useState(false)
@@ -15,9 +16,9 @@ export function Siderbar(){
           ? <Tooltip.Provider>
             <Tooltip.Root>
               <Tooltip.Trigger asChild>
-                <a href={props.href}>
+                <Link to={props.to}>
                   {props.icon}
-                </a>
+                </Link>
               </Tooltip.Trigger>
               <Tooltip.Portal>
                 <Tooltip.Content side="right" className={styles.tooltipContent} sideOffset={5}>
@@ -26,10 +27,10 @@ export function Siderbar(){
               </Tooltip.Portal>
             </Tooltip.Root>
             </Tooltip.Provider>
-          : <a href={props.href}>
+          : <Link to={props.to}>
               {props.icon}
               <span>{props.title}</span>
-            </a>
+            </Link>
         }
         </li>
     )
@@ -62,17 +63,17 @@ export function Siderbar(){
         <SidebarItem 
           icon={<House size={32}/>}
           title="PERFIL"
-          href="/perfil"
+          to="/dashboard"
         />
         <SidebarItem 
           icon={<Calendar size={32}/>}
           title="AGENDAR"
-          href="/perfil"
+          to="/scheduling"
         />
         <SidebarItem 
           icon={<FolderUser size={32}/>}
           title="CONSULTAR"
-          href="/perfil"
+          to="/consult"
         />
       </ul>
       

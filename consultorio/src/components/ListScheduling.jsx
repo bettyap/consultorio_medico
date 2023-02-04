@@ -5,10 +5,9 @@ export function ListScheduling(props){
   return(
     <div className={styles.contentDoctorList}>
       <span>{props.hours}</span>
-      <UserCircle size={48} color="var(--green-500)" />
       <div className={styles.listInfo}>
+        <UserCircle size={48} color="var(--green-500)" />
         <p>{props.name}</p>
-        <p>{props.speciality}</p>
       </div>
       <div className={styles.crud}>
         {

@@ -4,8 +4,15 @@ import { CalendarSimple } from "../../components/Calendar"
 import { List } from "../../components/List"
 import styles from "./Scheduling.module.css";
 import { ListScheduling } from "../../components/ListScheduling";
+import { useAuth } from "../../providers/auth";
+import { useScheduling } from "../../providers/scheduling";
 
 export function Scheduling(){
+  const { doctors  } = useAuth()
+  const { schedulings, setSchedulings } = useScheduling()
+
+  console.log(schedulings)
+  
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -14,26 +21,13 @@ export function Scheduling(){
           <section className={styles.main1}>
             <div className={styles.calendarContainer}>
               <div className={styles.contentDoctor}>
-                <List 
-                  name="Dra. Betty"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Betty"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Betty"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Betty"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Betty"
-                  speciality="Pediatra"
-                />
+              {doctors.map((doctor) => (
+                  <List 
+                    key={doctor.crm}
+                    name={doctor.name}
+                    speciality={doctor.specialty}
+                  />
+                ))}
               </div>
             </div>
             <div className={styles.calendarContainer}>
@@ -43,40 +37,15 @@ export function Scheduling(){
           <section className={styles.main2}>
             Horas
             <div className={styles.contentScheduling}>
-              <ListScheduling 
-                name="Betty"
-                hours="09:00"
-              />
-              <ListScheduling 
-                hours="09:30"
-              />
-              <ListScheduling 
-                hours="10:00"
-              />
-              <ListScheduling 
-                hours="10:30"
-              />
-              <ListScheduling 
-                hours="11:00"
-              />
-              <ListScheduling 
-                hours="11:30"
-              />
-              <ListScheduling 
-                hours="12:00"
-              />
-              <ListScheduling 
-                hours="12:30"
-              />
-              <ListScheduling 
-                hours="13:00"
-              />
-              <ListScheduling 
-                hours="13:30"
-              />
-              <ListScheduling 
-                hours="14:00"
-              />
+              {
+                schedulings.map((scheduling) => (
+                  <ListScheduling
+                    key={scheduling.patientCpf} 
+                    hours={scheduling.datetime}
+                    name={scheduling.patientName}
+                  />
+                ))
+              }
             </div>
           </section>
         </main>

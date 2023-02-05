@@ -118,3 +118,40 @@ td {
   flex-direction: column;
   overflow-y: auto;
 }
+
+@media(max-width: 880px){
+  .content {
+    flex-direction: column;
+  }
+  .main{
+    flex-direction: column;
+  }
+  .main1{
+    padding: 1rem;
+  }
+  .containerDashboard {
+    padding-top: 1rem;
+  }
+  .contentDashboard {
+    flex-direction: column;
+  }
+  .previsao{
+    padding: 0.75rem;
+  }
+  .previsao2 {
+    padding-top: 1rem;
+    margin-left: 0;
+  }
+  .infoConsulting + .infoConsulting{
+    margin-top: 1rem
+  }
+  .containerAviso{
+    padding-top: 2rem;
+  }
+  .main2{
+    padding: 1rem;
+  }
+  .calendarContainer + .calendarContainer{
+    padding-top: 1rem;
+  }
+}

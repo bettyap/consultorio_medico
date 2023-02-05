@@ -7,6 +7,7 @@ import { Search } from '../../components/Search'
 import { DeviceMobile, EnvelopeSimple, Heartbeat, MapPin } from 'phosphor-react'
 import { CalendarSimple } from '../../components/Calendar'
 import { List } from '../../components/List'
+import { useAuth } from '../../providers/auth'
 
 const data = [
   { contato: "Dra. Jade", mensagem: "A mãe da Dra. ligou precisa falar com ela", telefone: "+55 11 9999-9999" },
@@ -15,6 +16,7 @@ const data = [
 ]
 
 export default function Dashboard() {
+  const { doctors  } = useAuth()
 
   function DoctorAttending (props){
     return(
@@ -34,8 +36,6 @@ export default function Dashboard() {
       </div>
     );
   }
-
-
 
   return (
     <div className={styles.container}>
@@ -125,34 +125,13 @@ export default function Dashboard() {
             </div>
             <div className={styles.calendarContainer}>
               <div className={styles.contentDoctor}>
-                <List 
-                  name="Dra. Betty"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Jade"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Jenni"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Fabiana"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Fabiana"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Fabiana"
-                  speciality="Pediatra"
-                />
-                <List 
-                  name="Dra. Fabiana"
-                  speciality="Pediatra"
-                />
+                {doctors.map((doctor) => (
+                  <List
+                    key={doctor.crm}
+                    name={doctor.name}
+                    speciality={doctor.specialty}
+                  />
+                ))}
               </div>
             </div>
           </section>

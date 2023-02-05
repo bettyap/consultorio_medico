@@ -4,7 +4,7 @@ export const SchedulingContext = createContext({});
 
 const example = [
   {
-    datetime: "08:00",
+    datetime: "2023-02-04 08:00:00",
     doctorCrm: "CRM/SP 123456",
     paymentValue: "R$ 100,00",
     PaymentForm: "Dinheiro",
@@ -14,7 +14,7 @@ const example = [
     patientPhoneNumber: "11 99999-8888"
   },
   {
-    datetime: "08:30",
+    datetime: "2023-02-04 08:30:00",
     doctorCrm: "CRM/SP 654321",
     paymentValue: "R$ 180,00",
     PaymentForm: "Cartão de Crédito",

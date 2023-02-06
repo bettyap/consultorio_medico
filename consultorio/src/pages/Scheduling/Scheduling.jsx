@@ -4,28 +4,26 @@ import { CalendarSimple } from "../../components/Calendar"
 import { List } from "../../components/List"
 import styles from "./Scheduling.module.css";
 import { ListScheduling } from "../../components/ListScheduling";
-import { useAuth } from "../../providers/auth";
+import { useDoctor } from "../../providers/doctors";
 import { useScheduling } from "../../providers/scheduling";
 import { useState } from "react";
 import dayjs from 'dayjs';
 
 const hoursScheduling=[
-  "08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30",
-  "13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30"
+  "2023-01-01 08:00","2023-01-01 08:30","2023-01-01 09:00","2023-01-01 09:30","2023-01-01 10:00","2023-01-01 10:30","2023-01-01 11:00","2023-01-01 11:30","2023-01-01 12:00","2023-01-01 12:30",
+  "13:00","2023-01-01 13:30","2023-01-01 14:00","2023-01-01 14:30","2023-01-01 15:00","2023-01-01 15:30","2023-01-01 16:00","2023-01-01 16:30","2023-01-01 17:00","2023-01-01 17:30"
 ]
 
 export function Scheduling(){
   const [date, setDate] = useState()
 
-  const { doctors  } = useAuth()
+  const { doctors  } = useDoctor()
   const { schedulings, setSchedulings } = useScheduling()
   const [ schedulingCurrent, setSechedulingCurrent ] = useState([])
-  // const todaySchedulings = []
-
   
   function setActiveDate (value) {
     setDate(value)
-    let agendamentosDoDia = schedulings.filter((scheduling, index) => {
+    let todaySchedulings = schedulings.filter((scheduling) => {
       const scheduleDate = dayjs(scheduling.datetime).format("DD/MM/YYYY")
       const activeDate = dayjs(value).format("DD/MM/YYYY")
 
@@ -36,18 +34,31 @@ export function Scheduling(){
       }
     })
 
-    
-    // cria o array de horas e mergeia com os agendamentos do dia
+    const filteredSchedules = []
+   
     for(let i = 0; i < hoursScheduling.length; i++ ){
-      const hour = hoursScheduling[i] 
-      let agendamento = agendamentosDoDia.find(agendamento => {
-        return agendamento === hour
+      let hour = dayjs(hoursScheduling[i])
+      let scheduling = todaySchedulings.find(scheduling => {
+        let datetime = dayjs(scheduling.datetime)
+
+        if (hour.format("HH:mm") === datetime.format("HH:mm")) {
+          return true
+          
+        } else {
+          return false
+        }
+
       })
-
+      
+      if(scheduling){
+        filteredSchedules.push(scheduling)
+      }else{
+        filteredSchedules.push({
+          datetime: hour.format("YYYY-MM-DD HH:mm:ss") 
+        })
+      }
     }
-    setSechedulingCurrent(agendamentosDoDia)
-
-    console.log(agendamentosDoDia)
+    setSechedulingCurrent(filteredSchedules)
   }
 
   return (
@@ -77,7 +88,7 @@ export function Scheduling(){
               {
                 schedulingCurrent.map((scheduling) => (
                   <ListScheduling
-                    key={scheduling.patientCpf} 
+                    key={scheduling.datetime} 
                     hours={dayjs(scheduling.datetime).format("HH:mm")}
                     name={scheduling.patientName}
                   />

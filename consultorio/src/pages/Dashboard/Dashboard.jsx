@@ -1,5 +1,4 @@
 import 'react-calendar/dist/Calendar.css';
-import '../../global.css'
 import styles from './Dashboard.module.css'
 import React from 'react'
 import { Siderbar } from '../../components/Sidebar'
@@ -7,7 +6,7 @@ import { Search } from '../../components/Search'
 import { DeviceMobile, EnvelopeSimple, Heartbeat, MapPin } from 'phosphor-react'
 import { CalendarSimple } from '../../components/Calendar'
 import { List } from '../../components/List'
-import { useAuth } from '../../providers/auth'
+import { useDoctor } from '../../providers/doctors'
 
 const data = [
   { contato: "Dra. Jade", mensagem: "A mãe da Dra. ligou precisa falar com ela", telefone: "+55 11 9999-9999" },
@@ -16,7 +15,7 @@ const data = [
 ]
 
 export default function Dashboard() {
-  const { doctors  } = useAuth()
+  const { doctors  } = useDoctor()
 
   function DoctorAttending (props){
     return(

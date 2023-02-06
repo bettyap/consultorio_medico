@@ -1,16 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './lib/dayjs'
-import { AuthProvider } from './providers/auth'
+import { DoctorProvider } from './providers/doctors'
 import { SchedulingProvider } from './providers/scheduling'
 import Router from './routes'
+import './global.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
+    <DoctorProvider>
       <SchedulingProvider>
         <Router />
       </SchedulingProvider>
-    </AuthProvider>
+    </DoctorProvider>
   </React.StrictMode>,
 )

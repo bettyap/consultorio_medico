@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-export const AuthContext = createContext({});
+export const DoctorContext = createContext({});
 
 
 const initialDoctors = [
@@ -56,15 +56,14 @@ const initialDoctors = [
   },
 ]
 
-export const AuthProvider = (props) => {
+export const DoctorProvider = (props) => {
   const [doctors, setDoctors] = useState(initialDoctors)
 
   return (
-    <AuthContext.Provider value={{doctors, setDoctors}}>
+    <DoctorContext.Provider value={{doctors, setDoctors}}>
       {props.children}
-    </AuthContext.Provider>
+    </DoctorContext.Provider>
   );
 }
 
-export const useAuth = () => useContext(AuthContext)
-
+export const useDoctor = () => useContext(DoctorContext)

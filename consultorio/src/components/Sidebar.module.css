@@ -1,4 +1,4 @@
-.sidebar{
+.sidebar {
   width: 5.57rem;
   height: calc(100vh - 86px);
   display: flex;
@@ -30,7 +30,6 @@
 .sidebarContentBtn {
   margin: 1rem;
   padding: 0 10px;
-  
 }
 
 .sidebarContentBtnMenu {
@@ -77,7 +76,7 @@
   text-decoration: none;
 }
 
-.tooltipContent{
+.tooltipContent {
   border-radius: 4px;
   padding: 10px 15px;
   font-size: 15px;

@@ -3,7 +3,7 @@ import styles from "./Search.module.css";
 
 export function Search(){
   return(
-    <div className={styles.content}>
+    <div className={styles.containerSearch}>
       <input 
         className={styles.searchInput}
         type="text" 

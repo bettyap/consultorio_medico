@@ -4,7 +4,7 @@ import { Calendar, CaretDoubleLeft, CaretDoubleRight, FolderUser, House } from "
 import styles from "./Sidebar.module.css";
 import { Link } from "react-router-dom";
 
-export function Siderbar(){
+export function Sidebar(){
   const [menuOpen, setMenuOpen] = useState(false)
   const sidebarClassName = menuOpen ? styles.sidebar + " " + styles.open : styles.sidebar 
   const sidebarList = menuOpen ? styles.sidebarMenu + " " + styles.open : styles.sidebarMenu

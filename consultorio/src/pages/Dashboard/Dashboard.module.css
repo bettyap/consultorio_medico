@@ -55,7 +55,7 @@
 }
 
 .infoConsulting {
-  background: #F7F9F9;
+  background: var(--green-100);
   padding: 1rem;
 }
 

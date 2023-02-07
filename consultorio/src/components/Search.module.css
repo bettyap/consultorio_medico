@@ -1,4 +1,4 @@
-.containerSearch{
+.containerSearch {
   width: 100%;
   height: 2.14rem;
   display: flex;
@@ -18,6 +18,6 @@
   background: transparent;
 }
 
-.searchBtn svg{
+.searchBtn svg {
   cursor: not-allowed;
 }

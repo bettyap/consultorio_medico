@@ -1,4 +1,4 @@
-.contentDoctorList {
+.containerDoctorList {
   width: 100%;
   height: 5rem;
   background: var(--white);
@@ -9,11 +9,11 @@
   gap: 1rem;
 }
 
-.contentDoctorList + .contentDoctorList{
+.containerDoctorList + .containerDoctorList{
   margin-top: 1rem;
 }
 
-.listInfo {
+.contentDoctorListInfo {
   display: flex;
   flex-direction: column;
 }

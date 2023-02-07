@@ -63,7 +63,7 @@ export function Sidebar(){
         <SidebarItem 
           icon={<House size={32}/>}
           title="PERFIL"
-          to="/dashboard"
+          to="/"
         />
         <SidebarItem 
           icon={<Calendar size={32}/>}

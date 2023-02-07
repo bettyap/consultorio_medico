@@ -1,19 +1,25 @@
-.container{
+.containerModal{
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
 }
 
-label:nth-child(n+2) {
+.modalLabel:nth-child(n+2) {
   margin-top: 1rem
 }
 
-input {
+.modalInput {
   padding: 0.5rem;
   margin-top: 0.25rem;
 }
 
-.btnModal {
+.modalSelect {
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  cursor: pointer
+}
+
+.modalBtn {
   margin-top: 1.5rem;
   height: 2.375rem;
   padding: 0.5rem;
@@ -26,7 +32,7 @@ input {
   transition: background-color 0.1s;
 }
 
-.btnModal:hover {
+.modalBtn:hover {
   opacity: 1;
 }
 

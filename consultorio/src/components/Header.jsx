@@ -3,7 +3,7 @@ import { User } from "phosphor-react";
 
 export function Header(){
   return (
-    <header className={styles.header}>
+    <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <div className={styles.headerInfo}>
           <p>ELISABETH APARECIDA</p>

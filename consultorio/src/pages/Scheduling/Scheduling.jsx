@@ -2,7 +2,7 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { X } from "phosphor-react";
 import { ModalScheduling } from "../../components/ModalScheduling";
-import { Siderbar } from "../../components/Sidebar";
+import { Sidebar } from "../../components/Sidebar";
 import { CalendarSimple } from "../../components/Calendar"
 import { List } from "../../components/List"
 import styles from "./Scheduling.module.css";
@@ -99,9 +99,9 @@ export function Scheduling(){
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Siderbar />
+        <Sidebar />
         <main className={styles.main}>
-          <section className={styles.main1}>
+          <section className={styles.columnA}>
             <div className={styles.calendarContainer}>
               <div className={styles.contentDoctor}>
               {doctors.map((doctor) => (
@@ -117,7 +117,7 @@ export function Scheduling(){
               <CalendarSimple onChange={setActiveDate} value={date} />
             </div>
           </section>
-          <section className={styles.main2}>
+          <section className={styles.columnB}>
             {dayjs(date).format("DD/MMMM YYYY")}
             <div className={styles.contentScheduling}>
               {
@@ -138,7 +138,7 @@ export function Scheduling(){
               <Dialog.Overlay className={styles.modalOverlay}/>
 
               <Dialog.Content className={styles.modalContent} >
-                <Dialog.Close className={styles.modalFechar}>
+                <Dialog.Close className={styles.modalClose}>
                   <X size={24} onClick={() => setModalAddOpen(false)} color="var(--green-500)" aria-label="Fechar"/>
                 </Dialog.Close>
                 

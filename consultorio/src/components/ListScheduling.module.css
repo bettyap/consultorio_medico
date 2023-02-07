@@ -26,6 +26,10 @@
   justify-content: flex-end;
 }
 
+.crud svg{
+  cursor: pointer;
+}
+
 .btn {
   background: none;
   border: none;

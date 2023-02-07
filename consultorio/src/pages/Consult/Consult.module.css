@@ -1,8 +1,8 @@
-.container{
+.container {
   width: 100%;
 }
 
-.content{
+.content {
   display: flex;
   width: 100%;
 }
@@ -13,27 +13,27 @@
   justify-content: center;
 }
 
-.main1 {
+.consult {
   flex: 1;
   background: white;
   padding: 3rem;
 }
 
-.test{
+.headerConsult {
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-.test1 {
+.searchConsult {
   flex:1;
 }
 
-.test2{
+.advancedFilterConsult {
   flex: 1;
 }
 
-.test2 button {
+.advancedFilterConsult .advancedFilterBtn {
   width: 100%;
   height: 2.14rem;
   border: none;
@@ -44,19 +44,34 @@
   gap: 1rem;
 }
 
-button svg{
-  cursor: pointer;
+.advancedFilterBtn svg {
+  cursor: not-allowed;
 }
 
-.containerAviso {
+.containerAlert {
  padding-top: 3rem; 
 }
+
+.table {
+  border: 2px solid forestgreen;
+  width: 100%;
+  height: 200px;
+}
+
+.th {
+  border-bottom: 1px solid black;
+}
+
+.td {
+  text-align: center;
+}
+
 
 @media(max-width: 880px){
   .content {
     flex-direction: column;
   }
-  .main1{
+  .consult {
     padding: 1rem;
   }
   .containerAviso {

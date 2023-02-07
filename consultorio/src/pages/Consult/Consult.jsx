@@ -1,6 +1,6 @@
 import { Funnel } from "phosphor-react";
 import { Search } from "../../components/Search";
-import { Siderbar } from "../../components/Sidebar";
+import { Sidebar } from "../../components/Sidebar";
 import styles from "./Consult.module.css";
 
 const data = [
@@ -13,41 +13,41 @@ export function Consult(){
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Siderbar />
+        <Sidebar />
         <main className={styles.main}>
-          <section className={styles.main1}>
-            <div className={styles.test}>
-              <div className={styles.test1}>
+          <section className={styles.consult}>
+            <header className={styles.headerConsult}>
+              <div className={styles.searchConsult}>
                 <Search/>
               </div>
-              <div className={styles.test2}>
-                <button>
+              <div className={styles.advancedFilterConsult}>
+                <button className={styles.advancedFilterBtn}>
                   <Funnel size={28} color="var(--green-500)" />
                   <p>Filtro</p>
                 </button>
               </div>
-            </div>
-            <div className={styles.containerAviso}>
+            </header>
+            <div className={styles.containerAlert}>
               <p>Aviso</p>
-              <table>
+              <table className={styles.table}>
                 <thead>
                   <tr>
-                    <th>id</th>
-                    <th>CPF</th>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>Médico</th>
+                    <th className={styles.th}>id</th>
+                    <th className={styles.th}>CPF</th>
+                    <th className={styles.th}>Nome</th>
+                    <th className={styles.th}>Telefone</th>
+                    <th className={styles.th}>Médico</th>
                   </tr>
                 </thead>
                 <tbody>
                   {data.map((item, key) => {
                     return (
                       <tr key={key}>
-                        <td>{item.id}</td>
-                        <td>{item.cpf}</td>
-                        <td>{item.name}</td>
-                        <td>{item.phone}</td>
-                        <td>{item.doctor}</td>
+                        <td className={styles.td}>{item.id}</td>
+                        <td className={styles.td}>{item.cpf}</td>
+                        <td className={styles.td}>{item.name}</td>
+                        <td className={styles.td}>{item.phone}</td>
+                        <td className={styles.td}>{item.doctor}</td>
                       </tr>
                     )
                   })}

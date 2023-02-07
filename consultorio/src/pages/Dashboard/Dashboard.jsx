@@ -1,7 +1,7 @@
 import 'react-calendar/dist/Calendar.css';
 import styles from './Dashboard.module.css'
 import React from 'react'
-import { Siderbar } from '../../components/Sidebar'
+import { Sidebar } from '../../components/Sidebar'
 import { Search } from '../../components/Search'
 import { DeviceMobile, EnvelopeSimple, Heartbeat, MapPin } from 'phosphor-react'
 import { CalendarSimple } from '../../components/Calendar'
@@ -39,20 +39,20 @@ export default function Dashboard() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Siderbar />
+        <Sidebar />
         <main className={styles.main}>
-          <section className={styles.main1}>
+          <section className={styles.columnA}>
             <Search/>
             <div className={styles.containerDashboard}>
               <div className={styles.contentDashboard}>
-                <div className={styles.previsao}>
+                <div className={styles.forecast}>
                   <div className={styles.infoQueries}>
                     <p>Consultas: 100</p>
                     <p>Consultas concluídas: 22</p>
                     <p>Faltas: 02 </p>
                   </div>
                 </div>
-                <div className={styles.previsao2}>
+                <div className={styles.forecastA}>
                   <div className={styles.infoConsulting}>
                     <DoctorAttending
                       name="Dra. Jade"
@@ -92,25 +92,25 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className={styles.containerAviso}>
-              <p>Aviso</p>
-              <table>
+            <div className={styles.containerAlert}>
+              <p>Lembrete</p>
+              <table className={styles.table}>
                 <thead>
                   <tr>
-                    <th>Status</th>
-                    <th>Contato</th>
-                    <th>Mensagem</th>
-                    <th>Telefone</th>
+                    <th className={styles.th}>Status</th>
+                    <th className={styles.th}>Contato</th>
+                    <th className={styles.th}>Mensagem</th>
+                    <th className={styles.th}>Telefone</th>
                   </tr>
                 </thead>
                 <tbody>
                   {data.map((item, key) => {
                     return (
                       <tr key={key}>
-                        <td><input type="checkbox" /></td>
-                        <td>{item.contato}</td>
-                        <td>{item.mensagem}</td>
-                        <td>{item.telefone}</td>
+                        <td className={styles.td}><input type="checkbox" /></td>
+                        <td className={styles.td}>{item.contato}</td>
+                        <td className={styles.td}>{item.mensagem}</td>
+                        <td className={styles.td}>{item.telefone}</td>
                       </tr>
                     )
                   })}
@@ -118,7 +118,7 @@ export default function Dashboard() {
               </table>
             </div>
           </section>
-          <section className={styles.main2}>
+          <section className={styles.columnB}>
             <div className={styles.calendarContainer}>
               <CalendarSimple />
             </div>

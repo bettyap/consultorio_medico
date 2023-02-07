@@ -1,8 +1,8 @@
-.container{
+.container {
   width: 100%;
 }
 
-.content{
+.content {
   display: flex;
   width: 100%;
 }
@@ -13,13 +13,13 @@
   justify-content: center;
 }
 
-.main1 {
+.columnA {
   flex: 2;
   background: white;
   padding: 3rem;
 }
 
-.main2 {
+.columnB {
   flex: 1;
   padding: 2rem
 }
@@ -29,14 +29,14 @@
   padding-top: 3rem;
 }
 
-.contentDashboard{
+.contentDashboard {
   width: 100%;
   display: flex;
 }
 
-.previsao{
+.forecast {
   flex: 1;
-  background: #F7F9F9;
+  background: var(--green-100);
   padding: 1rem;
 }
 
@@ -49,7 +49,7 @@
   margin-top: 2rem;
 }
 
-.previsao2{
+.forecastA {
   flex: 1;
   margin-left: 2rem;
 }
@@ -59,46 +59,46 @@
   padding: 1rem;
 }
 
-.infoConsultingItem{
+.infoConsultingItem {
   display: flex;
   align-items: center;
   gap: 0.50rem;
 }
 
-.infoConsulting + .infoConsulting{
+.infoConsulting + .infoConsulting {
   margin-top: 2rem
 }
 
-.infoConsultingItem + .infoConsultingItem{
+.infoConsultingItem + .infoConsultingItem {
   margin-top: 1rem;
 }
 
-.infoDoctorAttending{
+.infoDoctorAttending {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.infoDoctorAttending + .infoDoctorAttending{
+.infoDoctorAttending + .infoDoctorAttending {
   margin-top: 0.5rem;
 }
 
-.containerAviso {
+.containerAlert {
   width: 100%;
   padding-top: 3rem;
 }
 
-table {
+.table {
   border: 2px solid forestgreen;
   width: 100%;
   height: 200px;
 }
   
-th {
+.th {
   border-bottom: 1px solid black;
 }
   
-td {
+.td {
   text-align: center;
 }
 
@@ -107,11 +107,11 @@ td {
   display: flex;
 }
 
-.calendarContainer + .calendarContainer{
+.calendarContainer + .calendarContainer {
   padding-top: 2rem;
 }
 
-.contentDoctor{
+.contentDoctor {
   width: 100%;
   height: 26.8rem;
   display: flex;
@@ -123,10 +123,10 @@ td {
   .content {
     flex-direction: column;
   }
-  .main{
+  .main {
     flex-direction: column;
   }
-  .main1{
+  .columnA {
     padding: 1rem;
   }
   .containerDashboard {
@@ -135,23 +135,23 @@ td {
   .contentDashboard {
     flex-direction: column;
   }
-  .previsao{
+  .forecast {
     padding: 0.75rem;
   }
-  .previsao2 {
+  .forecastA {
     padding-top: 1rem;
     margin-left: 0;
   }
-  .infoConsulting + .infoConsulting{
+  .infoConsulting + .infoConsulting {
     margin-top: 1rem
   }
-  .containerAviso{
+  .containerAlert {
     padding-top: 2rem;
   }
-  .main2{
+  .columnB {
     padding: 1rem;
   }
-  .calendarContainer + .calendarContainer{
+  .calendarContainer + .calendarContainer {
     padding-top: 1rem;
   }
 }

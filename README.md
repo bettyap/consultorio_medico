@@ -1,7 +1,7 @@
 <div align="center">
     <h1 align="center">Consultório Médico</h1>
 </div>
-<p>Projeto desenvolvido para a entrevista técnica utilizando ReactJS <p>
+<p>Projeto desenvolvido para a entrevista técnica utilizando ReactJS, e realizado o responsivo <p>
 <h1>Demonstração da aplicação</h1>
 <a href="https://consultorio-medico.netlify.app/">Consultório Médico </a>
 <h1>Tabela de conteúdos</h1>

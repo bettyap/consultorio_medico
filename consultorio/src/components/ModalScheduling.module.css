@@ -1,0 +1,36 @@
+.container{
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label:nth-child(n+2) {
+  margin-top: 1rem
+}
+
+input {
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.btnModal {
+  margin-top: 1.5rem;
+  height: 2.375rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background: var(--green-500);
+  border: none;
+  color: white;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.btnModal:hover {
+  opacity: 1;
+}
+
+.formError {
+  font-size: 0.85rem;
+  color: red;
+}

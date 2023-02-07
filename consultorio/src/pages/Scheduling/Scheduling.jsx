@@ -1,4 +1,7 @@
 
+import * as Dialog from '@radix-ui/react-dialog';
+import { X } from "phosphor-react";
+import { ModalScheduling } from "../../components/ModalScheduling";
 import { Siderbar } from "../../components/Sidebar";
 import { CalendarSimple } from "../../components/Calendar"
 import { List } from "../../components/List"
@@ -6,7 +9,7 @@ import styles from "./Scheduling.module.css";
 import { ListScheduling } from "../../components/ListScheduling";
 import { useDoctor } from "../../providers/doctors";
 import { useScheduling } from "../../providers/scheduling";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import dayjs from 'dayjs';
 
 const hoursScheduling=[
@@ -20,7 +23,17 @@ export function Scheduling(){
   const { doctors  } = useDoctor()
   const { schedulings, setSchedulings } = useScheduling()
   const [ schedulingCurrent, setSechedulingCurrent ] = useState([])
-  
+  const [ modalAddOpen, setModalAddOpen ] = useState(false)
+  const [ editingScheduling, setEditingScheduling ] = useState()
+
+  useEffect(() => {
+    setActiveDate(new Date())
+  }, [])
+
+  useEffect(() => {
+    setActiveDate(date)
+  }, [schedulings])
+
   function setActiveDate (value) {
     setDate(value)
     let todaySchedulings = schedulings.filter((scheduling) => {
@@ -61,6 +74,28 @@ export function Scheduling(){
     setSechedulingCurrent(filteredSchedules)
   }
 
+  function addSchedule(scheduling) {
+    setModalAddOpen(true)
+    setEditingScheduling(scheduling)
+  }
+
+  function onAddModalSubmit(form = {}) {
+    
+    let datetime = dayjs(date).format("YYYY-MM-DD") + " " + dayjs(editingScheduling.datetime).format("HH:mm:ss")
+    form.datetime = datetime
+
+    setSchedulings([...schedulings, form])
+    setModalAddOpen(false)
+  }
+
+  function deleteSchedule(removedScheduling) {
+    let newSchedulings = schedulings.filter(scheduling => {
+      return scheduling.datetime !== removedScheduling.datetime
+    })
+
+    setSchedulings(newSchedulings)
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -91,11 +126,30 @@ export function Scheduling(){
                     key={scheduling.datetime} 
                     hours={dayjs(scheduling.datetime).format("HH:mm")}
                     name={scheduling.patientName}
+                    onAdd={() => addSchedule(scheduling)}
+                    onDelete={() => deleteSchedule(scheduling)}
                   />
                 ))
               }
             </div>
           </section>
+          <Dialog.Root open={modalAddOpen}>
+            <Dialog.Portal>
+              <Dialog.Overlay className={styles.modalOverlay}/>
+
+              <Dialog.Content className={styles.modalContent} >
+                <Dialog.Close className={styles.modalFechar}>
+                  <X size={24} onClick={() => setModalAddOpen(false)} color="var(--green-500)" aria-label="Fechar"/>
+                </Dialog.Close>
+                
+                <Dialog.Title>
+                  Agendar consulta
+                </Dialog.Title>
+
+                <ModalScheduling onSubmit={onAddModalSubmit}/>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
         </main>
       </div>
     </div>

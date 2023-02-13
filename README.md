@@ -43,7 +43,7 @@
         <a href="https://github.com/wojtekmaj/react-calendar">React Calendar</a>
     </li>
     <li>
-        <a href="https://www.radix-ui.com/docs/primitives/overview/getting-started">React Calendar</a>
+        <a href="https://www.radix-ui.com/docs/primitives/overview/getting-started">Radix Ui</a>
     </li>
     <li>
         <a href="https://day.js.org/docs/en/parse/string-format">Day.js</a>
